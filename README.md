@@ -9,12 +9,18 @@ Don't hesitate to reach me, or donate using the links on my profile, all donatio
 This script is Linux-only
 
 ## 🛠️ Installation
+Manual installation:
 ```bash
 git clone https://github.com/M4elstr0m/OneCompiler.git
 cd OneCompiler
 chmod +x onecompier
 ```
-
+Debian (.deb) installation:
+```bash
+cd packages
+sudo dpkg -i onecompiler.deb
+```
+**Please notice that the package will be accessible anywhere on your system with this install, so you don't need to put the ```./``` anymore before ```onecompiler```**
 ## 📚 Usage
 Basic usage:
 ```bash
