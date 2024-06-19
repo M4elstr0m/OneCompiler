@@ -13,7 +13,7 @@ Manual installation:
 ```bash
 git clone https://github.com/M4elstr0m/OneCompiler.git
 cd OneCompiler
-chmod +x onecompier
+chmod +x onecompiler
 ```
 Debian (.deb) installation:
 ```bash
