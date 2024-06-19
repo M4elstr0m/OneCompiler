@@ -1,0 +1,76 @@
+#!/bin/bash
+# MADE BY M4elstr0m_ #
+# Github : https://github.com/M4elstr0m #
+
+if [ "$1" == "--help" ] || [ "$1" == "-h" ] || [ "$1" == "" ]; then
+    echo -e "\e[1mOneCompiler\e[0m \e[1m\e[31mv1.0\e[0m (WIP)"
+    echo -e "Created by \e[1mM4elstr0m_\e[0m to make cross-platform compiling easier for Linux users"
+    echo -e "Github: \e[1mhttps://github.com/M4elstr0m\e[0m \n"
+    echo -e "Please refer to README.md for more information"
+    echo -e "Usage: onecompiler [Options] file\n"
+    echo -e "  --help/-h     : Display this help message"
+    echo -e "  --windows/-w  : Will output an executable for Windows system"
+    echo -e "  --linux/-l    : Will output an executable for Linux system (untested on MacOS)"
+    echo -e "\nSupported file extensions: .cpp, .go\n"
+    echo -e ""
+    exit 1
+fi
+
+Os=$1
+CodeFile=${!#}
+
+package_list=('g++' 'x86_64-w64-mingw32-g++' 'go')
+
+# Check if the first option (system option) is valid for OneCompiler #
+case $Os in 
+    "--windows")
+        ;;
+    "-w")
+        ;;
+    "--linux")
+        ;;
+    "-l")
+        ;;
+    *)
+        echo "'$Os' is not supported by OneCompiler"
+        exit 1
+        ;;
+esac
+
+
+# Check if all packages in the $package_list are installed on the system #
+for element in ${package_list[@]}; do
+    if command -v $element >/dev/null; then
+        continue
+    else
+        echo "'$element' is not installed, please install told package(s) before starting OneCompiler"
+        exit 1
+    fi
+done
+
+# Check if the file provided is supported by OneCompiler #
+case $CodeFile in
+    # C++ file extension (.cpp) #
+    *.cpp) 
+        if [ "$Os" == "--windows" ] || [ "$Os" == "-w" ]; then
+            x86_64-w64-mingw32-g++ "$CodeFile"
+        elif [ "$Os" == "--linux" ] || [ "$Os" == "-l" ]; then
+            g++ "$CodeFile"
+        fi
+        ;;
+    # Go file extension (.go) #
+    *.go)
+        if [ "$Os" == "--windows" ] || [ "$Os" == "-w" ]; then
+            GOOS=windows GOARCH=amd64 go build "$CodeFile"
+        elif [ "$Os" == "--linux" ] || [ "$Os" == "-l" ]; then
+            go build "$CodeFile"
+        fi
+        ;;
+    *)
+        echo "File not specified or unknown file extension!"
+        exit 1
+        ;;
+esac
+
+# MADE BY M4elstr0m_ #
+# Github : https://github.com/M4elstr0m #
