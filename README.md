@@ -32,7 +32,39 @@ Create a Windows-compatible file from a .cpp (C++) file:
 ./onecompiler --windows mycode.cpp
 ```
 
-Create a Linux-compatible file from a .go (C++) file:
+Create a Linux-compatible file from a .go (Go) file:
 ```bash
-./onecompiler --windows mycode.cpp
+./onecompiler --linux mycode.go
 ```
+## 🧩 Modules
+<div>
+<table>
+  <tr>
+    <th>Language Name</th>
+    <th>File Extension</th>
+    <th>Supported</th>
+    <th>Version</th>
+  </tr>
+  <tr>
+    <td>C++</td>
+    <td>.cpp</td>
+    <td>✅</td>
+    <td>v1.0</td>
+  </tr>
+  <tr>
+    <td>Go</td>
+    <td>.go</td>
+    <td>✅</td>
+    <td>v1.0</td>
+  </tr>
+  <tr>
+    <td>C#</td>
+    <td>.cs</td>
+    <td>🚧</td>
+    <td>?</td>
+  </tr>
+</table>
+</div>
+
+## 🗒️ Credits
+Softwares/Codes used in this repository : g++, x86_64-w64-mingw32-g++, go
