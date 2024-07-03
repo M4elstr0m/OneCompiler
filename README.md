@@ -1,4 +1,4 @@
-# **OneCompiler [![Github All Releases](https://img.shields.io/github/downloads/M4elstr0m/TarkovMapTracker/total.svg)]()**
+# **OneCompiler [![Github All Releases](https://img.shields.io/github/downloads/M4elstr0m/OneCompiler/total.svg)]()**
 💠  A Linux script designed to make cross-platform compiling easier
 <br>Why ? Because I find it is better to have one universal command for all platforms and file extensions
 
